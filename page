@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
-            background-image: url('https://hitam.org/wp-content/uploads/2022/07/green-building-mob.jpg'); 
+            background-image: url(''); <!-- add url of the image u want in bg -->
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -73,7 +73,7 @@
 </head>
 <body>
     <div class="login-container">
-        <img src="https://admissions2023.hitam.org/logo.png" alt="Logo" class="top-logo"> 
+        <img src="" alt="Logo" class="top-logo">  <!-- add url of the image u want in the place of logo -->
         <h1>Login</h1>
         <div class="form-group">
             <label for="username">Username</label>
