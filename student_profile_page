@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 25%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: #555;
+        }
+        .details {
+            text-align: center;
+        }
+        .details p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+            flex: 1 1 150px;
+        }
+        .tab:hover {
+            background-color: #0056b3;
+        }
+        .profile-options {
+            margin-top: 20px;
+        }
+        .profile-options .tab {
+            background-color: #6c757d;
+        }
+        .profile-options .tab:hover {
+            background-color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HITAM</h1>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <div class="avatar">Avatar</div>
+            <div class="details">
+                <p><strong>Roll No.:</strong> 12345</p>
+                <p><strong>Class:</strong> 10</p>
+                <p><strong>Section:</strong> A</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="tabs">
+                <div class="tab">Academic Calendar</div>
+                <div class="tab">Assignments Report</div>
+                <div class="tab">Backlogs</div>
+                <div class="tab">Complaint/Suggestion</div>
+                <div class="tab">Fee Details</div>
+                <div class="tab">Hostel Request</div>
+                <div class="tab">Marks</div>
+                <div class="tab">Resources</div>
+                <div class="tab">Time Table</div>
+            </div>
+            <div class="profile-options">
+                <div class="tab">Change Mobile No./E-Mail</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function redirectToProfile() {
+            const username = localStorage.getItem('username');
+            if (!username) {
+                alert('User not logged in. Redirecting to login page.');
+                window.location.href = 'login.html';
+            } else {
+                document.querySelector('.details').innerHTML = `
+                    <p><strong>Roll No.:</strong> 12345</p>
+                    <p><strong>Class:</strong> 10</p>
+                    <p><strong>Section:</strong> A</p>
+                    <p><strong>Welcome:</strong> ${username}</p>
+                `;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', redirectToProfile);
+    </script>
+</body>
+</html>
